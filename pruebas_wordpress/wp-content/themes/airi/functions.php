@@ -425,3 +425,20 @@ add_action("init","campos_posttype",0);
  */
 require get_template_directory() . '/inc/onboarding/class-airi-onboarding.php';
 
+
+/* HOOKS */
+
+remove_action('airi_footer','airi_footer_credits');
+//ACTION
+function change_footer(){
+	?>
+	<div class='container'><h4>Footer Personalizado</h4></div>
+	<?php
+}
+add_action( 'airi_footer', 'change_footer');
+
+/* FILTERS */
+function filter_titulo(){
+	return "Titulo Filtreado";
+}
+add_filter( 'the_title', 'filter_titulo', 10);
