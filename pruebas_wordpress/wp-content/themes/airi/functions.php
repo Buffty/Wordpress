@@ -361,14 +361,7 @@ add_action( 'tgmpa_register', 'airi_register_required_plugins' );
  */
 require get_template_directory() . '/inc/customizer/upsell/class-customize.php';
 
-/**
- * Onboarding
- */
-require get_template_directory() . '/inc/onboarding/class-airi-onboarding.php';
-
-
 /* POST PERSONALIZADOS */
-
 
 function new_posttype(){
 	register_post_type("noticias",
@@ -426,3 +419,9 @@ function campos_posttype(){
 	register_post_type("noticias",$args);
 }
 add_action("init","campos_posttype",0);
+
+/**
+ * Onboarding
+ */
+require get_template_directory() . '/inc/onboarding/class-airi-onboarding.php';
+
