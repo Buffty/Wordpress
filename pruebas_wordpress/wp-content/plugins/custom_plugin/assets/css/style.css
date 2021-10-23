@@ -1,0 +1,6 @@
+.card_body_custom{padding-left:25px;margin-top:25px!important}
+.input_label label{width:100%}
+.input_label{width:50%;float:left}
+.card_footer_custom{margin-top:25px!important;margin:auto;margin-bottom:25px!important}
+.alert_danger, .alert_danger_password{color:red;font-size:13px;padding:5px;display:none}
+.alerta_respuesta{font-size:13px;padding:5px;display:none}
