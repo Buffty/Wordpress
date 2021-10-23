@@ -134,9 +134,16 @@ function airi_widgets_init() {
 
 	register_widget( 'Airi_Social' );
 	register_widget( 'Airi_Recent_Posts' );
-
+	
 }
 add_action( 'widgets_init', 'airi_widgets_init' );
+
+
+// CUSTOM WIDGET
+function widget_register(){
+	register_widget("custom_widget");
+}
+add_action("widgets_init","widget_register");
 
 /**
  * Enqueue scripts and styles.
@@ -263,6 +270,9 @@ require get_template_directory() . '/inc/compatibility/elementor/skins/class-air
  */
 require get_template_directory() . '/widgets/class-airi-social.php';
 require get_template_directory() . '/widgets/class-airi-recent-posts.php';
+
+// CUSTOM WIDGET
+require get_template_directory() . '/widgets/widget_custom.php';
 
 /**
  * Custom template tags for this theme.
