@@ -448,7 +448,8 @@ function change_footer(){
 add_action( 'airi_footer', 'change_footer');
 
 /* FILTERS */
-function filter_titulo(){
-	return "Titulo Filtreado";
+function filter_titulo($titulo){
+	if($titulo==="Inicio")return "Titulo Filtreado";
+	return $titulo;
 }
-add_filter( 'the_title', 'filter_titulo', 10);
+add_filter( 'the_title', 'filter_titulo', 10, 1);

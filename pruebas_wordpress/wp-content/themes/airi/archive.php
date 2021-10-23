@@ -9,13 +9,16 @@
 
 get_header();
 $layout = airi_blog_layout();
+$args_query=array("post_type"=>"noticias","order"=>"ASC","posts_per_page" => 2);
+$wp_query=new WP_Query($args_query);
+
 ?>
 
 	<div id="primary" class="content-area <?php echo esc_attr( $layout['type'] ); ?> <?php echo esc_attr( $layout['cols'] ); ?>">
 		<main id="main" class="site-main">
 
 		<?php
-		if ( have_posts() ) : ?>
+		if ( $wp_query->have_posts() ) : ?>
 
 			<header class="page-header col-md-12 mb30">
 				<?php
@@ -29,7 +32,7 @@ $layout = airi_blog_layout();
 					<div class="grid-sizer"></div>
 					<?php
 					/* Start the Loop */
-					while ( have_posts() ) : the_post();
+					while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
 						/*
 						* Include the Post-Format-specific template for the content.
